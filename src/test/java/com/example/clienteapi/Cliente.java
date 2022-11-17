@@ -1,7 +1,5 @@
 package com.example.clienteapi;
 
-import org.springframework.lang.NonNull;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -26,11 +24,6 @@ public class Cliente {
 
     public Cliente(){
 
-    }
-
-    public Cliente(Long id, String nome, String endereco){
-        this.id = id;
-        this.nome = nome;
     }
 
     public Long getId() {
