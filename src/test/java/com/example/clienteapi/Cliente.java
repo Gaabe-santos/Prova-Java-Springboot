@@ -1,9 +1,9 @@
 package com.example.clienteapi;
 
-import com.sun.istack.NotNull;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -12,14 +12,16 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotNull
+    @NotNull(message = "O nome é obrigatório")
     private String nome;
+    private String profissao;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Endereco> enderecos;
 
     public Cliente(String nome, String enderecos, List<Endereco>endereco){
         this.nome = nome;
         this.enderecos = endereco;
+        this.profissao = profissao;
     }
 
     public Cliente(){
